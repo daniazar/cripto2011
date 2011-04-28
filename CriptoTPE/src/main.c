@@ -53,6 +53,7 @@ int main(int argc, char **argv) {
 	{
 		printf("bits %d, %c \n", i, *(w->bits +i));
 	}
+
 */
 	return EXIT_SUCCESS;
 
