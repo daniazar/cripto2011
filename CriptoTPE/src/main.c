@@ -21,21 +21,23 @@
 
 #include "../include/dataall.h"
 #include "../include/command.h"
+#include "../include/verify.h"
 
 
 int main(int argc, char **argv) {
 	data * pdata;
+
 	pdata = NewData();
-
 	linecommand(argc, argv);
-
+	Verify();
 	loadFile();
-	wave * w = getFile();
+
+
+	/*wave * w = getFile();
 	printf("Cantidad de bits %d\n" , w->cantBits);
+	 */
 
 	writeFile();
-
-
 	return EXIT_SUCCESS;
 
 

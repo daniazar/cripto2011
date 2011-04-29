@@ -21,8 +21,11 @@
  * Project includes
  */
 
+#include "../include/color.h"
+
+
 void Error(char * message)
 {
-	fprintf(stderr,"%s\n", message);
+	fprintf(stderr,"%s%s\n%s", BLUE,message, WHITE);
 	exit(EXIT_FAILURE);
 }

@@ -23,16 +23,14 @@
 #ifndef VERIFY_H_
 #define VERIFY_H_
 
-#include "dataall.h"
-
 /*
  * Function:  		Verify
- * Example:			if(Verify(air))
- * Description:		this fuction cotrols the limits of the cordinates
+ * Example:			Verify();
+ * Description:		this fuction check that the arguments are correct.
  * Precondition:	Air created
  * Postcondition:	--
  *
  */
-/*int Verify(airport air);
-*/
+void Verify(void);
+
 #endif /* VERIFY_H_ */
