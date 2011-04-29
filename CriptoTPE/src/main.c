@@ -32,7 +32,6 @@ int main(int argc, char **argv) {
 	loadFile();
 	wave * w = getFile();
 	printf("Cantidad de bits %d\n" , w->cantBits);
-	w->bits
 
 	writeFile();
 
