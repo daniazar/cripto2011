@@ -68,5 +68,5 @@ data * getdata(void);
 
 void loadFile();
 wave * getFile(void);
-
+void writeFile();
 #endif /* DATA_H_ */

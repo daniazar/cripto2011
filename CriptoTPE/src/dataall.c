@@ -66,18 +66,18 @@ void loadFile()
 
 	if ((arch =fopen(p->input,"rb")) == NULL)
 	{
-		Error("In open of configuration file:");
+		Error("In open of input file:");
 	}
 
 	if (fread(w->head, sizeof( BYTE) , HEADER , arch)  != HEADER)
 	{
-		Error("Error in configuration file.");
+		Error("Error in input file.");
 	}
 
 
 	if (fread( & (w->cantBits), 4 , 1 , arch)  != 1)
 	{
-		Error("Error in configuration file.");
+		Error("Error in input file.");
 	}
 
 	w->bits = calloc(w->cantBits, sizeof(BYTE));
@@ -86,12 +86,45 @@ void loadFile()
 
 	if (fread(w->bits, sizeof( BYTE) , w->cantBits , arch)  != w->cantBits)
 	{
-		Error("Error in configuration file.");
+		Error("Error in input file.");
 	}
 
 	if (fclose(arch)== EOF)
 	{
-		Error("In close of configuration file");
+		Error("In close of input file");
+	}
+
+}
+
+
+void writeFile()
+{
+	static FILE *arch;
+
+	if ((arch =fopen(p->output,"wb")) == NULL)
+	{
+		Error("In open of output file:");
+	}
+	;
+	if (fwrite(w->head, sizeof( BYTE) , HEADER , arch)  != HEADER)
+	{
+		Error("Error in writing output file.");
+	}
+
+
+	if (fwrite( & (w->cantBits), 4 , 1 , arch)  != 1)
+	{
+		Error("Error in writing output file.");
+	}
+
+	if (fwrite(w->bits, sizeof( BYTE) , w->cantBits , arch)  != w->cantBits)
+	{
+		Error("Error in writing output file.");
+	}
+
+	if (fclose(arch)== EOF)
+	{
+		Error("In close of output file");
 	}
 
 }

@@ -25,15 +25,6 @@
 #define COMMAND_H_
 
 
-/*
- * Function:		commands
- * Example:			commands(d);
- * Description:		While there are commands or command End is received, it analyze the input
- * 					 and do the corresponding procedure
- * Precondition:	data initialized.
- * Postcondition:	No more command from input
- *
- */
 
 void commands(data * d);
 
@@ -46,33 +37,6 @@ void commands(data * d);
  *
  */
 void linecommand(int argc, char **argv);
-
-/*
- * Function:		InsertAllflight
- * Example:			void InsertAllflight(d, archivo);
- * Description:		Inserts all the flights that have correct format in file archivo.
- * Precondition:	data initialized, File archivo must exist.
- * Postcondition:	All flights added
- *
- */
-
-void InsertAllflight(data * d, char * archivo);
-
-
-/*
- * Function:		InsertAllAirp
- * Example:			InsertAllAirp(d, archivo);
- * Description:		Inserts all the airport that have correct format in file archivo.
- * Precondition:	data initialized, File archivo must exist.
- * Postcondition:	All airports added
- *
- */
-
-void InsertAllAirp(data * d, char * archivo);
-
-
-
-
 
 
 #endif /* COMMAND_H_ */
