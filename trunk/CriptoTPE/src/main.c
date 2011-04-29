@@ -22,10 +22,6 @@
 #include "../include/dataall.h"
 #include "../include/command.h"
 
-int login( void)
-{
-	return 1;
-}
 
 int main(int argc, char **argv) {
 	data * pdata;
@@ -33,28 +29,14 @@ int main(int argc, char **argv) {
 
 	linecommand(argc, argv);
 
-
-	if(!login())
-	{
-		printf( "Not a valid user\n");
-		return EXIT_FAILURE;
-	}
-
 	loadFile();
 	wave * w = getFile();
-	int i;
-/*	for(i=0;i < 40 ;i++)
-		{
-			printf("Header bis %d, %c \n", i, w->head[i]);
-		}
-	*/printf("Cantidad de bits %d\n" , w->cantBits);
+	printf("Cantidad de bits %d\n" , w->cantBits);
+	w->bits
 
-/*	for(i=0;i <= w->cantBits;i++)
-	{
-		printf("bits %d, %c \n", i, *(w->bits +i));
-	}
+	writeFile();
 
-*/
+
 	return EXIT_SUCCESS;
 
 
