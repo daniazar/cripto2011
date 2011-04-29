@@ -45,7 +45,12 @@ data * NewData(void)
 	p = calloc(1, sizeof( data));
 	if (p == NULL)
 		Error("No memory for data structure");
+	p->mode = notInitialized;
+	p->enc_mode = notInitialized1;
+	p->primitive = notInitialized2;
+
 	return p;
+
 }
 
 
@@ -73,7 +78,6 @@ void loadFile()
 	{
 		Error("Error in input file.");
 	}
-
 
 	if (fread( & (w->cantBits), 4 , 1 , arch)  != 1)
 	{
@@ -110,7 +114,6 @@ void writeFile()
 	{
 		Error("Error in writing output file.");
 	}
-
 
 	if (fwrite( & (w->cantBits), 4 , 1 , arch)  != 1)
 	{

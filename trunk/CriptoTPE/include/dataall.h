@@ -23,34 +23,39 @@
  * Project includes
  */
 
-
 #define MAXLINE 120
 #define HEADER 40
-
+#define LINE 2000
 typedef unsigned char BYTE;
 
-/*
-typedef enum
-{
-	TEXT, KML
-} outT;
-*/
-typedef struct
-{
-	/*outT outType;*/
-	char input[MAXLINE];
-	char output[MAXLINE];
+typedef enum {
+	encrypt, decrypt, notInitialized
+} modeT;
 
+typedef enum {
+	ecb, cfb, ofb, cbc, notInitialized1
+} encModeT;
+
+typedef enum {
+	aes128, aes192, aes256, des, notInitialized2
+} primitiveT;
+
+typedef struct {
+	char input[MAXLINE]; 	/*Input file name*/
+	char output[MAXLINE]; 	/*output file name*/
+	modeT mode; 				/*What mode to use encrypt or decrypt*/
+	char pass[LINE]; 		/*Password if necesary else it is null*/
+	char key[LINE]; 			/*Password if necesary else it is null*/
+	char vector[LINE]; 		/*Password if necesary else it is null*/
+	encModeT enc_mode; 		/*encryption mode cbc, ebc, etc*/
+	primitiveT primitive	;	/*what primitive to use, AES, DES, etc*/
+/*primitive to use*/
 } data;
 
-
-
-typedef struct
-{
-	BYTE head[HEADER];
-	int cantBits;
-	BYTE * bits;
-
+typedef struct {
+	BYTE head[HEADER]; 		/*header will be copied to output file.*/
+	int cantBits; 			/*number of bits to read of sound data in the file*/
+	BYTE * bits; 			/*pointer to the data to be encrypted or decrypted.*/
 
 } wave;
 
