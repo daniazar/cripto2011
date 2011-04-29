@@ -44,9 +44,9 @@ typedef struct {
 	char input[MAXLINE]; 	/*Input file name*/
 	char output[MAXLINE]; 	/*output file name*/
 	modeT mode; 				/*What mode to use encrypt or decrypt*/
-	char pass[LINE]; 		/*Password if necesary else it is null*/
-	char key[LINE]; 			/*Password if necesary else it is null*/
-	char vector[LINE]; 		/*Password if necesary else it is null*/
+	char pass[LINE]; 		/*Password if necesary else it is \0*/
+	char key[LINE]; 			/*Password if necesary else it is \0*/
+	char vector[LINE]; 		/*Password if necesary else it is \0*/
 	encModeT enc_mode; 		/*encryption mode cbc, ebc, etc*/
 	primitiveT primitive	;	/*what primitive to use, AES, DES, etc*/
 /*primitive to use*/
