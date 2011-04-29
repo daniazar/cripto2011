@@ -22,19 +22,29 @@
 #include "../include/dataall.h"
 #include "../include/command.h"
 #include "../include/verify.h"
+#include "../include/testingCrypt.h"
 
 
 int main(int argc, char **argv) {
 	data * pdata;
 
 	pdata = NewData();
+	printf("aca0");
+	fflush(stdin);
 	linecommand(argc, argv);
 	Verify();
+	printf("aca1");
+	fflush(stdin);
+
 	loadFile();
+	printf("aca2");
+	fflush(stdin);
 
+	wave * w = getFile();
 
-	/*wave * w = getFile();
-	printf("Cantidad de bits %d\n" , w->cantBits);
+	uncipher(w,pdata);
+
+	/*printf("Cantidad de bits %d\n" , w->cantBits);
 	 */
 
 	writeFile();
