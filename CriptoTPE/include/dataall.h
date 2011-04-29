@@ -29,7 +29,7 @@
 typedef unsigned char BYTE;
 
 typedef enum {
-	encrypt, decrypt, notInitialized
+	encryption, decryption, notInitialized
 } modeT;
 
 typedef enum {

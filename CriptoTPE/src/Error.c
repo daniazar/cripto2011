@@ -26,6 +26,7 @@
 
 void Error(char * message)
 {
+	perror("Error");
 	fprintf(stderr,"%s%s\n%s", BLUE,message, WHITE);
 	exit(EXIT_FAILURE);
 }

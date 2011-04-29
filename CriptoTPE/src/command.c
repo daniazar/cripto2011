@@ -51,11 +51,11 @@ void linecommand(int argc, char **argv) {
 		}else
 		if (strcmp(argv[i], "-e") == 0) {
 			printf("%s Mode Encription  $ %s \n", GREEN, WHITE);
-			pdata->mode = encrypt;
+			pdata->mode = encryption;
 		}else
 		if (strcmp(argv[i], "-d") == 0) {
 			printf("%s Mode Decription  $ %s \n", GREEN, WHITE);
-			pdata->mode = decrypt;
+			pdata->mode = decryption;
 		}else
 		if (strcmp(argv[i], "-pass") == 0) {
 			i++;
