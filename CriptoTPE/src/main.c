@@ -29,20 +29,16 @@ int main(int argc, char **argv) {
 	data * pdata;
 
 	pdata = NewData();
-	printf("aca0");
-	fflush(stdin);
 	linecommand(argc, argv);
 	Verify();
-	printf("aca1");
-	fflush(stdin);
-
 	loadFile();
-	printf("aca2");
-	fflush(stdin);
-
+	hasPassPass();
 	wave * w = getFile();
-
-	uncipher(w,pdata);
+	if(pdata->mode == encryption){
+		cipher(w,pdata);
+	}else{
+		uncipher(w,pdata);
+	}
 
 	/*printf("Cantidad de bits %d\n" , w->cantBits);
 	 */
