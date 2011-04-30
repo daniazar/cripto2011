@@ -40,8 +40,6 @@ void Verify(void)
 	if(pdata->pass[0]== '\0' && pdata->key[0]== '\0')
 		Error("you must specify a password or a key an a vector.\n\t-pass password \n\t-K key -iv initialvector");
 
-
-
 }
 
 

@@ -7,7 +7,7 @@
 
 #ifndef TESTINGCRYPT_H_
 #define TESTINGCRYPT_H_
-
-wave * chipher(wave * waveFile, data* dataCypherInfo) ;
+void hasPassPass();
+wave * cipher(wave * waveFile, data* dataCypherInfo) ;
 int uncipher(wave * waveFile, data* dataCypherInfo);
 #endif /* TESTINGCRYPT_H_ */

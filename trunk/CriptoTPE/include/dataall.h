@@ -31,31 +31,33 @@ typedef unsigned char BYTE;
 typedef enum {
 	encryption, decryption, notInitialized
 } modeT;
+#include "../include/dataall.h"
+
 
 typedef enum {
-	ecb, cfb, ofb, cbc, notInitialized1
+	cbc, cfb, ecb, ofb, notInitialized1
 } encModeT;
 
 typedef enum {
-	aes128, aes192, aes256, des, notInitialized2
+	des = 0, aes128, aes192, aes256, notInitialized2
 } primitiveT;
 
 typedef struct {
-	char input[MAXLINE]; 	/*Input file name*/
-	char output[MAXLINE]; 	/*output file name*/
-	modeT mode; 				/*What mode to use encrypt or decrypt*/
-	char pass[LINE]; 		/*Password if necesary else it is \0*/
-	char key[LINE]; 			/*Password if necesary else it is \0*/
-	char vector[LINE]; 		/*Password if necesary else it is \0*/
-	encModeT enc_mode; 		/*encryption mode cbc, ebc, etc*/
-	primitiveT primitive	;	/*what primitive to use, AES, DES, etc*/
+	char input[MAXLINE]; /*Input file name*/
+	char output[MAXLINE]; /*output file name*/
+	modeT mode; /*What mode to use encrypt or decrypt*/
+	char pass[LINE]; /*Password if necesary else it is \0*/
+	char key[LINE]; /*Password if necesary else it is \0*/
+	char vector[LINE]; /*Password if necesary else it is \0*/
+	encModeT enc_mode; /*encryption mode cbc, ebc, etc*/
+	primitiveT primitive; /*what primitive to use, AES, DES, etc*/
 /*primitive to use*/
 } data;
 
 typedef struct {
-	BYTE head[HEADER]; 		/*header will be copied to output file.*/
-	int cantBits; 			/*number of bits to read of sound data in the file*/
-	BYTE * bits; 			/*pointer to the data to be encrypted or decrypted.*/
+	BYTE head[HEADER]; /*header will be copied to output file.*/
+	int cantBits; /*number of bits to read of sound data in the file*/
+	BYTE * bits; /*pointer to the data to be encrypted or decrypted.*/
 
 } wave;
 

@@ -75,25 +75,25 @@ void linecommand(int argc, char **argv) {
 		if (strcmp(argv[i], "-a") == 0) {
 			i++;
 			printf("%s Criptographic Primitive $, %s%s \n", GREEN, WHITE, argv[i]);
-			if(strcmp("aes128", argv[i]))
+			if(strcmp("aes128", argv[i]) == 0)
 				pdata->primitive = aes128;
-			if(strcmp("aes192", argv[i]))
+			if(strcmp("aes192", argv[i]) == 0)
 				pdata->primitive = aes192;
-			if(strcmp("aes256", argv[i]))
+			if(strcmp("aes256", argv[i]) == 0)
 				pdata->primitive = aes256;
-			if(strcmp("des", argv[i]))
+			if(strcmp("des", argv[i]) == 0)
 				pdata->primitive = des;
 		}else
 		if (strcmp(argv[i], "-m") == 0) {
 			i++;
 			printf("%s Mode $, %s%s \n", GREEN, WHITE, argv[i]);
-			if(strcmp("ecb", argv[i]))
+			if(strcmp("ecb", argv[i]) == 0)
 				pdata->enc_mode = ecb;
-			if(strcmp("ofb", argv[i]))
+			if(strcmp("ofb", argv[i]) == 0)
 				pdata->enc_mode = ofb;
-			if(strcmp("cfb", argv[i]))
+			if(strcmp("cfb", argv[i]) == 0)
 				pdata->enc_mode = cfb;
-			if(strcmp("cbc", argv[i]))
+			if(strcmp("cbc", argv[i]) == 0)
 				pdata->enc_mode = cbc;
 
 		}
